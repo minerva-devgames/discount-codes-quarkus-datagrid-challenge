@@ -1,4 +1,4 @@
-package com.redhat.challenge.discount;
+/*package com.redhat.challenge.discount;
 
 import io.quarkus.runtime.StartupEvent;
 import org.slf4j.Logger;
@@ -26,3 +26,4 @@ public class DiscountCodesCacheCreation {
         // Infinispan Simple Tutorials repository.
     }
 }
+*/
