@@ -25,5 +25,4 @@ public class DiscountCodesCacheCreation {
         // Use XMLStringConfiguration. Grab a look to the simple tutorial about "creating caches on the fly" in the
         // Infinispan Simple Tutorials repository.
     }
-}
-*/
+}*/
