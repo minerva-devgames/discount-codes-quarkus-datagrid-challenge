@@ -1,10 +1,10 @@
 package com.redhat.challenge.discount.model;
 
-import io.quarkus.runtime.annotations.RegisterForReflection;
+import org.infinispan.protostream.annotations.ProtoFactory;
+import org.infinispan.protostream.annotations.ProtoField;
 
 import java.util.Objects;
 
-@RegisterForReflection
 public class DiscountCode {
 
    private String name;
@@ -16,6 +16,7 @@ public class DiscountCode {
    public DiscountCode() {
    }
 
+   @ProtoFactory
    public DiscountCode(String name, Integer amount, String enterprise, DiscountCodeType type, Integer used) {
       this.name = name;
       this.amount = amount;
@@ -24,6 +25,7 @@ public class DiscountCode {
       this.used = used;
    }
 
+   @ProtoField(value = 1)
    public String getName() {
       return name;
    }
@@ -32,6 +34,7 @@ public class DiscountCode {
       this.name = name;
    }
 
+   @ProtoField(value = 2)
    public Integer getAmount() {
       return amount;
    }
@@ -40,6 +43,7 @@ public class DiscountCode {
       this.amount = amount;
    }
 
+   @ProtoField(value = 3)
    public String getEnterprise() {
       return enterprise;
    }
@@ -48,6 +52,7 @@ public class DiscountCode {
       this.enterprise = enterprise;
    }
 
+   @ProtoField(value = 4)
    public DiscountCodeType getType() {
       return type;
    }
@@ -56,6 +61,7 @@ public class DiscountCode {
       this.type = type;
    }
 
+   @ProtoField(value = 5)
    public Integer getUsed() {
       return used;
    }
