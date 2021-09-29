@@ -27,8 +27,8 @@ public class DiscountCodesCacheCreation {
         LOGGER.info("Create or get cache named discounts with the default configuration");
         // Inject the cache manager and use the administration API to create the cache.
         // You can also use the operator or the WebConsole to create the cache "discounts"
-         String cacheConfig = String.format(CACHE_CONFIG, "discounts");
-        cacheManager.administration().getOrCreateCache("discounts", new XMLStringConfiguration(cacheConfig));
+         String cacheConfig = String.format(CACHE_CONFIG, "discounts_cache");
+        cacheManager.administration().getOrCreateCache("discounts_cache", new XMLStringConfiguration(cacheConfig));
         // Use XMLStringConfiguration. Grab a look to the simple tutorial about "creating caches on the fly" in the
         // Infinispan Simple Tutorials repository.
     }

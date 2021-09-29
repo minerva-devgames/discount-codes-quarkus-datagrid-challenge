@@ -6,7 +6,7 @@ import org.infinispan.protostream.annotations.AutoProtoSchemaBuilder;
 
 import com.redhat.challenge.discount.model.DiscountCode;
 
-@AutoProtoSchemaBuilder(includeClasses = {DiscountCode.class, DiscountCodeType.class}, schemaPackageName = "discounts")
+@AutoProtoSchemaBuilder(includeClasses = {DiscountCode.class, DiscountCodeType.class}, schemaPackageName = "discounts_sample")
 interface DiscountStoreSchema extends GeneratedSchema{
 
 }

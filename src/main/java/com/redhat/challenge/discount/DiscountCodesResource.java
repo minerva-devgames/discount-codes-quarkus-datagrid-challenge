@@ -25,7 +25,7 @@ import java.util.stream.Collectors;
 public class DiscountCodesResource {
 
     @Inject
-    @Remote("discounts")
+    @Remote("discounts_cache")
     RemoteCache<String, DiscountCode> cache;
 
     RemoteCacheManager remoteCacheManager;

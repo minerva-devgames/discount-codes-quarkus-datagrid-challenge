@@ -2,6 +2,8 @@ package com.redhat.challenge.discount;
 
 import com.redhat.challenge.discount.model.DiscountCode;
 import com.redhat.challenge.discount.model.DiscountCodeType;
+
+import io.quarkus.test.common.QuarkusTestResource;
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -12,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 // NOTE: When you connect the REST API to RHDG or Infinispan, you will need an Infinispan or DG running in test
 // containers The @QuarkusTestResource with the CacheResource provided, will do this for you.
-//@QuarkusTestResource(CacheResource.class)
+@QuarkusTestResource(CacheResource.class)
 @QuarkusTest
 class DiscountCodesResourceTest {
 

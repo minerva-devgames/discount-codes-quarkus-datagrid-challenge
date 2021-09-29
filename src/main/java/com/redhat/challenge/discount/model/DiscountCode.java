@@ -7,21 +7,21 @@ import java.util.Objects;
 
 public class DiscountCode {
 
-   private String name;
-   private Integer amount;
-   private String enterprise;
-   private DiscountCodeType type;
-   private Integer used;
+    private String name;
+    private Integer amount;
+    private String enterprise;
+    private DiscountCodeType type;
+    private Integer used;
 
    public DiscountCode() {
    }
 
    @ProtoFactory
    public DiscountCode(String name, Integer amount, String enterprise, DiscountCodeType type, Integer used) {
-      this.name = name;
-      this.amount = amount;
-      this.enterprise = enterprise;
-      this.type = type;
+      this.name = Objects.requireNonNull(name);
+      this.amount = Objects.requireNonNull(amount);
+      this.enterprise = Objects.requireNonNull(enterprise);
+      this.type = Objects.requireNonNull(type);
       this.used = used;
    }
 
@@ -43,7 +43,7 @@ public class DiscountCode {
       this.amount = amount;
    }
 
-   @ProtoField(value = 3)
+    @ProtoField(value = 3)
    public String getEnterprise() {
       return enterprise;
    }
