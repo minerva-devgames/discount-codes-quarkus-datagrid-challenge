@@ -18,6 +18,14 @@ public class DiscountCodesCacheCreation {
     @Inject
     RemoteCacheManager cacheManager;
 
+    /*
+        nmartin7:
+        About concurrency and how to avoid it, it's only need configure cache with following flags
+        in XML or using ConfigurationBuilder (this second option is recommended in infinispan documentation)
+            <locking isolation="READ_COMMITTED"/> or <locking isolation="REPEATABLE_READ"/>
+            <transaction mode="NON_XA"/> or <transaction mode="NONE"/> or <transaction mode="FULL_XA"/> or <transaction mode="NON_DURABLE_XA"/> or <transaction mode="BATCH"/>
+    */
+
     private static final String CACHE_CONFIG = "<distributed-cache name=\"%s\">"
             + " <encoding media-type=\"application/x-protostream\"/>"
             + "</distributed-cache>";
