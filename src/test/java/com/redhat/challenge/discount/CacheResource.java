@@ -1,4 +1,4 @@
-package com.redhat.challenge.discount;
+/*package com.redhat.challenge.discount;
 
 import io.quarkus.test.common.QuarkusTestResourceLifecycleManager;
 import org.testcontainers.containers.GenericContainer;
@@ -13,6 +13,7 @@ import java.util.Map;
  * You don't need to change this class, just uncomment the @QuarkusTestResource annotation and make
  * sure docker is running locally for testcontainers
  */
+/*
 public class CacheResource implements QuarkusTestResourceLifecycleManager {
 
     private static GenericContainer INFINISPAN = null;
@@ -39,3 +40,4 @@ public class CacheResource implements QuarkusTestResourceLifecycleManager {
         INFINISPAN.stop();
     }
 }
+*/
