@@ -13,10 +13,12 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.net.URI;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 @Path("/discounts")
@@ -37,7 +39,7 @@ public class DiscountCodesResource {
     public Response create(DiscountCode discountCode) {
         if (!cache.containsKey(discountCode.getName())) {
             discountCode.setUsed(0);
-            cache.put(discountCode.getName(), discountCode);
+            cache.put(discountCode.getName(), discountCode, discountCode.getTime(), TimeUnit.SECONDS);
             return Response.created(URI.create(discountCode.getName())).build();
         }
 
@@ -46,14 +48,17 @@ public class DiscountCodesResource {
 
     @GET
     @Path("/consume/{name}")
-    public Response consume(@PathParam("name") String name) {
+    public Response consume(@PathParam("name") String name, @QueryParam("times") Integer times) {
         DiscountCode discountCode = cache.get(name);
 
         if(discountCode == null) {
             return Response.noContent().build();
         }
-
-        discountCode.setUsed(discountCode.getUsed() + 1);
+        if (times == null){
+            discountCode.setUsed(discountCode.getUsed() + 1);
+        } else{
+            discountCode.setUsed(discountCode.getUsed() + times);
+        }
         cache.put(name, discountCode);
 
         return Response.ok(discountCode).build();

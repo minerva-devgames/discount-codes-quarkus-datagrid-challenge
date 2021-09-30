@@ -4,8 +4,8 @@ import org.infinispan.protostream.annotations.ProtoEnumValue;
 
 public enum DiscountCodeType {
     
-   @ProtoEnumValue(number=1, name="PERCENT")
+   @ProtoEnumValue(number=0, name="PERCENT")
    PERCENT,
-   @ProtoEnumValue(number=2, name="VALUE")
+   @ProtoEnumValue(number=1, name="VALUE")
    VALUE
 }

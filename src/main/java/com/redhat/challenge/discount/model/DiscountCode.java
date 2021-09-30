@@ -12,6 +12,7 @@ public class DiscountCode {
     private String enterprise;
     private DiscountCodeType type;
     private Integer used;
+    private Integer time;
 
    public DiscountCode() {
    }
@@ -68,6 +69,14 @@ public class DiscountCode {
 
    public void setUsed(Integer used) {
       this.used = used;
+   }
+
+   public Integer getTime() {
+      return time;
+   }
+
+   public void setTime(Integer time) {
+      this.time = time;
    }
 
    @Override
